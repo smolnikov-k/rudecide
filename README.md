@@ -97,12 +97,18 @@ python score.py data/track_a_unseen.jsonl predictions.jsonl
 
 | Модель | Трек A acc / skill | Трек B acc / skill |
 |---|---|---|
-| Jev (TypeSafe, `~typesafe/jev-latest` через OpenRouter) | **87,1 / 79,6** | 84,6 / 75,1 |
-| [Мигом 2B](https://huggingface.co/smolnikov/migom-2b)* | 78,9 / 65,9 | **96,1 / 94,6** |
+| Jev (TypeSafe, `~typesafe/jev-latest` через OpenRouter) | 87,1 / 79,6 | 84,6 / 75,1 |
+| [Мигом 4B](https://huggingface.co/smolnikov/migom-4b)* | 84,8 / 75,5 | **96,7 / 95,3** |
+| Gemini 3.7 Flash (облако, Kaggle Benchmarks) | **89,9 / 84,0** | 88,9 / 81,5 |
+| Gemma 4 26B-A4B (Kaggle Benchmarks) | 87,8 / 80,8 | 85,8 / 77,3 |
+| decider-4b v2.1 (Mapika) | 84,3 / 75,1 | 83,4 / 73,4 |
+| [Мигом 2B](https://huggingface.co/smolnikov/migom-2b)* | 78,9 / 65,9 | 96,1 / 94,6 |
 | decider-2b v11 (Mapika) | 78,6 / 65,4 | 75,7 / 62,1 |
 | JevK5-2B v0.2 | 70,8 / 51,8 | 69,4 / 51,1 |
 | [Кивок 0.3B v0.2](https://huggingface.co/smolnikov/kivok-0.3b)* | 50,5 / 17,4 | 92,3 / 89,7 |
 | Laya-multilingual 322M | 48,9 / 14,8 | 53,6 / 35,6 |
+
+Генеративные модели (Gemini, Gemma) отвечают ключом варианта через Kaggle Benchmarks, задача `smolnikov/rudecide`.
 
 \* Мигом и Кивок обучены на тренировочных частях источников трека B (кроме каталогов навыков), поэтому их результат
 на треке B показывает эффект дообучения, а не обобщение. Трек A они не видели.
